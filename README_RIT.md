@@ -14,7 +14,7 @@ The contract is designed to support a tokenised rental-income model based on the
 The deployed Sepolia testnet contract address is:
 
 ```text
-0xaED35AE0aAE637B7D557703ab33acB570273d2B2
+https://sepolia.etherscan.io/address/0xc7b03c46e52E6FA5E92499Ad8158552176aa0214
 ```
 
 ---
