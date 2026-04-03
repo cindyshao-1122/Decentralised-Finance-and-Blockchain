@@ -279,24 +279,3 @@ The holder’s RIT is burned and the contract sends the corresponding payment-to
 
 ---
 
-## 7. Suggested appendix evidence for the report
-
-To support the report appendix, include screenshots of:
-
-- deployed contract address on Sepolia
-- `totalSupply()` result
-- `balanceOf()` result
-- one successful `transfer()` transaction
-- one `approve()` and `allowance()` demonstration
-- optional additional screenshots for lock-up, rental distribution, or redemption if tested
-
----
-
-## 8. GitHub / report alignment
-
-This README is designed to match the coursework report logic:
-
-- **Section 3** — fixed supply, ERC-20 transfer, approve, allowance
-- **Section 4** — primary issuance, lock-up, liquidity support
-- **Section 6** — on-chain settlement, DeFi integration, redemption lifecycle
-
