@@ -99,37 +99,9 @@ You can then call read functions directly or submit transactions for write funct
 
 ---
 
-## 4. Recommended demonstration sequence
+## 4. How to use the main functions
 
-For coursework purposes, the simplest demonstration is:
-
-### A. Show token creation
-1. Call `totalSupply()`
-2. Call `balanceOf(your_address)`
-
-This shows that the token exists on-chain and that the initial supply was successfully created.
-
-### B. Show transferability
-1. Copy a second Sepolia wallet address
-2. Call `transfer(second_address, 1000000000000000000)`
-
-This transfers **1 RIT** if the token has 18 decimals.
-
-3. Call `balanceOf(second_address)`
-
-This proves that the token can be transferred between addresses.
-
-### C. Show third-party authorisation
-1. Call `approve(spender, amount)`
-2. Call `allowance(owner, spender)`
-
-This demonstrates standard ERC-20 delegated access, which is important for DEX and DeFi integration.
-
----
-
-## 5. How to use the main functions
-
-### 5.1 `totalSupply()`
+### 4.1 `totalSupply()`
 Use this to confirm the token’s fixed supply.
 
 **Type:** read-only  
@@ -137,7 +109,7 @@ Use this to confirm the token’s fixed supply.
 
 ---
 
-### 5.2 `balanceOf(address account)`
+### 4.2 `balanceOf(address account)`
 Use this to check the balance of any wallet.
 
 **Type:** read-only  
@@ -149,7 +121,7 @@ Example:
 
 ---
 
-### 5.3 `transfer(address to, uint256 amount)`
+### 4.3 `transfer(address to, uint256 amount)`
 Use this to send RIT to another address.
 
 **Type:** transaction  
@@ -165,7 +137,7 @@ This sends **1 RIT** if the token uses 18 decimals.
 
 ---
 
-### 5.4 `approve(address spender, uint256 amount)`
+### 4.4 `approve(address spender, uint256 amount)`
 Use this to authorise another wallet or smart contract to use a specified amount of your tokens.
 
 **Type:** transaction  
@@ -175,7 +147,7 @@ This is necessary for integrations with DEXs, AMM pools, and other DeFi applicat
 
 ---
 
-### 5.5 `allowance(address owner, address spender)`
+### 4.5 `allowance(address owner, address spender)`
 Use this to check how many tokens a spender has been approved to use.
 
 **Type:** read-only  
@@ -183,7 +155,7 @@ Use this to check how many tokens a spender has been approved to use.
 
 ---
 
-### 5.6 `allocatePrimarySale(address investor, uint256 tokenAmount)`
+### 4.6 `allocatePrimarySale(address investor, uint256 tokenAmount)`
 Use this to assign primary-sale tokens to an investor under the lock-up schedule.
 
 **Type:** transaction  
@@ -195,7 +167,7 @@ Important:
 
 ---
 
-### 5.7 `claimLockedTokens()`
+### 4.7 `claimLockedTokens()`
 Use this to release claimable locked tokens after the unlock date.
 
 **Type:** transaction  
@@ -205,7 +177,7 @@ If called too early, the transaction will fail.
 
 ---
 
-### 5.8 `depositRentalIncome(uint256 amount)`
+### 4.8 `depositRentalIncome(uint256 amount)`
 Use this to deposit payment tokens into the contract before making rental-income distributions.
 
 **Type:** transaction  
@@ -216,7 +188,7 @@ It transfers the designated **payment token** used for distributions.
 
 ---
 
-### 5.9 `distributeRentalIncome(address[] investors, uint256[] amounts)`
+### 4.9 `distributeRentalIncome(address[] investors, uint256[] amounts)`
 Use this to distribute rental-income payments to a list of investors.
 
 **Type:** transaction  
@@ -228,7 +200,7 @@ Requirements:
 
 ---
 
-### 5.10 `fundLiquidityIncentives(address target, uint256 tokenAmount)`
+### 4.10 `fundLiquidityIncentives(address target, uint256 tokenAmount)`
 Use this to send treasury-held RIT to a target address for liquidity incentives or market-support activity.
 
 **Type:** transaction  
@@ -238,7 +210,7 @@ This function is useful for demonstrating how the token may support AMM or liqui
 
 ---
 
-### 5.11 `fundRedemption(uint256 amount)`
+### 4.11 `fundRedemption(uint256 amount)`
 Use this to deposit payment-token reserves into the contract before opening redemption.
 
 **Type:** transaction  
@@ -246,7 +218,7 @@ Use this to deposit payment-token reserves into the contract before opening rede
 
 ---
 
-### 5.12 `openRedemption(uint256 pricePerToken)`
+### 4.12 `openRedemption(uint256 pricePerToken)`
 Use this to activate the redemption window and set the repurchase price.
 
 **Type:** transaction  
@@ -256,7 +228,7 @@ If the redemption time has not arrived yet, the transaction will fail.
 
 ---
 
-### 5.13 `redeem(uint256 tokenAmount)`
+### 4.13 `redeem(uint256 tokenAmount)`
 Use this to exchange RIT for the payment token after redemption has opened.
 
 **Type:** transaction  
@@ -266,7 +238,7 @@ The holder’s RIT is burned and the contract sends the corresponding payment-to
 
 ---
 
-## 6. Important notes for coursework use
+## 5. Important notes for coursework use
 
 1. This contract is a **coursework demonstration contract**, not a production-ready real-estate tokenisation system.
 2. The contract shows how token creation, transferability, lock-up, distribution, and redemption can be represented on-chain.
